@@ -4,12 +4,12 @@ import numpy as np
 class YOLO_Kmeans:
 
     def __init__(self, cluster_number, filename):
-        self.cluster_number = cluster_number
+        self.cluster_number = 9
         self.filename = "2012_train.txt"
 
     def iou(self, boxes, clusters):  # 1 box -> k clusters
         n = boxes.shape[0]
-        k = self.cluster_number
+        k = cluster_number
 
         box_area = boxes[:, 0] * boxes[:, 1]
         box_area = box_area.repeat(k)
